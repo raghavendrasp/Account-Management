@@ -22,7 +22,7 @@ Note that this seed project requires node >=v8.9.0 and npm >=4.
 
 **In order to start the project use:**
 
- - $ git clone https://github.com/raghavendrasp/Angular8WithAdminLTE.git
+ - $ git clone https://github.com/raghavendrasp/Account-Management.git
  - cd management-app
  - npm install
  - npm serve -open
