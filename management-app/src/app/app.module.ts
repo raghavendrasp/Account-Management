@@ -25,6 +25,7 @@ import { AccountCostRateComponent } from './rate/account-cost-rate/account-cost-
 import { SearchComponent } from './search/search.component';
 import { AccountService } from './service/account.service';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -53,7 +54,8 @@ import { HttpClientModule } from '@angular/common/http';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [
     AccountService

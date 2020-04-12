@@ -47,9 +47,9 @@
           </div>
 
           <div class="form-group row">
-            <label for="accountList" class="col-sm-2 col-form-label"
-              >Account Name</label
-            >
+            <label for="accountList" class="col-sm-2 col-form-label">
+              Account Name
+            </label>
             <div class="col-sm-10">
               <input
                 type="email"
@@ -60,9 +60,9 @@
             </div>
           </div>
           <div class="form-group row">
-            <label for="accountDesc" class="col-sm-2 col-form-label"
-              >Account Description</label
-            >
+            <label for="accountDesc" class="col-sm-2 col-form-label">
+              Account Description
+            </label>
             <div class="col-sm-10">
               <textarea
                 type="password"
@@ -74,9 +74,24 @@
           </div>
 
           <div class="form-group row">
-            <label for="accountDesc" class="col-sm-2 col-form-label"
-              >Dummy Employee Info To Test Service</label
-            >
+            <label for="api" class="col-sm-2 col-form-label">
+              API
+            </label>
+            <div class="col-sm-10">
+              <input
+                type="text"
+                class="form-control"
+                id="api"
+                #api
+                placeholder="Ex : https://reqres.in/api/users?page=2"
+              />
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <label for="accountDesc" class="col-sm-2 col-form-label">
+              API Response
+            </label>
             <div class="col-sm-10">
               <textarea
                 type="password"
@@ -91,7 +106,7 @@
             <label for="accountDesc" class="col-sm-2 col-form-label"
               ></label>
             <div class="col-sm-10">
-              <button type="button" (click)="getUser()" class="btn btn-info btn-sm">Test API</button>
+              <button type="button" (click)="testApi(api)" class="btn btn-info btn-sm">Test API</button>
             </div>
           </div>
 

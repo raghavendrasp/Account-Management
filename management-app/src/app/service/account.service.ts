@@ -2,7 +2,8 @@ import { Injectable } from "@angular/core";
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { HttpServiceConstant } from "../model/http-service-constant";
 import { Observable, throwError } from "rxjs";
-import { retry, catchError } from "rxjs/operators";
+import { retry, catchError, map } from "rxjs/operators";
+import { User } from '../model/user';
 
 @Injectable({
   providedIn: "root",
@@ -31,13 +32,22 @@ export class AccountService {
         HttpServiceConstant.baseURL + "/getAccounts",
         this.httpOptions
       )
-      .pipe(retry(1), catchError(this.handleError));
+      .pipe(
+        map((data: Account[]) => {
+          return data;
+        }),
+        retry(1),
+        catchError(this.handleError));
   }
 
-  getSampleUser(): Observable<any> {
+  testApi(api): Observable<any> {
     return this.http
-      .post("https://reqres.in/api/users", this.httpOptions)
-      .pipe(retry(1), catchError(this.handleError));
+      .get(api, this.httpOptions)
+      .pipe(
+        map((data : User[]) =>{
+          return data;
+        }),
+        retry(1), catchError(this.handleError));
   }
 
   // Error handling
