@@ -23,6 +23,8 @@ import { ColaFutureBillingRateComponent } from './rate/cola-future-billing-rate/
 import { ColaBillingRateComponent } from './rate/cola-billing-rate/cola-billing-rate.component';
 import { AccountCostRateComponent } from './rate/account-cost-rate/account-cost-rate.component';
 import { SearchComponent } from './search/search.component';
+import { AccountService } from './service/account.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -50,9 +52,12 @@ import { SearchComponent } from './search/search.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [
+    AccountService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
